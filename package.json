@@ -2,7 +2,7 @@
   "name": "vibe-lang-support",
   "displayName": "Vibe Language Support",
   "description": "Full syntax highlighting, IntelliSense, snippets, run/build/check commands, REPL, diagnostics, and file icons for the Vibe programming language.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "publisher": "CodePlanet",
   "license": "MIT",
   "repository": {

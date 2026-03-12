@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Vibe-Programming-Language/Vibe/main/assets/banner.svg" alt="Vibe" width="400">
-</p>
-
 <h1 align="center">Vibe Language Extension for VS Code</h1>
 
 <p align="center">
