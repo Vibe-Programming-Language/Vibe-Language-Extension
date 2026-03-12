@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/vibe-icon.png" alt="Vibe Logo" width="128" />
+  <img src="https://raw.githubusercontent.com/Vibe-Programming-Language/Vibe/main/assets/banner.svg" alt="Vibe" width="400">
 </p>
 
 <h1 align="center">Vibe Language Extension for VS Code</h1>
@@ -12,7 +12,8 @@
   <a href="https://marketplace.visualstudio.com/items?itemName=CodePlanet.vibe-lang-support"><img src="https://img.shields.io/visual-studio-marketplace/v/CodePlanet.vibe-lang-support?color=%234cc9f0&label=Marketplace" alt="Version"></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=CodePlanet.vibe-lang-support"><img src="https://img.shields.io/visual-studio-marketplace/i/CodePlanet.vibe-lang-support?color=%2300b4d8" alt="Installs"></a>
   <a href="https://github.com/Vibe-Programming-Language/Vibe-Language-Extension/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-  <a href="https://github.com/Vibe-Programming-Language/Vibe"><img src="https://img.shields.io/badge/Vibe-v1.0.0-%23f72585" alt="Vibe"></a>
+  <a href="https://github.com/Vibe-Programming-Language/Vibe"><img src="https://img.shields.io/badge/Vibe-v1.0.0-black?style=flat-square" alt="Vibe"></a>
+  <a href="https://vibe-lang-docs.vercel.app"><img src="https://img.shields.io/badge/docs-live-black?style=flat-square" alt="Docs"></a>
 </p>
 
 ---
@@ -166,6 +167,8 @@ npx vsce package
 
 Learn more at [github.com/Vibe-Programming-Language/Vibe](https://github.com/Vibe-Programming-Language/Vibe)
 
+📖 **Documentation:** [vibe-lang-docs.vercel.app](https://vibe-lang-docs.vercel.app)
+
 ---
 
 ## Contributing
@@ -177,4 +180,5 @@ Contributions are welcome! Please open an issue or pull request on [GitHub](http
 ## License
 
 [MIT](LICENSE) © CodePlanet
+
 
