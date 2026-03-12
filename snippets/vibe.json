@@ -1,0 +1,311 @@
+{
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:name}(${2:params}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Define a function"
+  },
+  "Function with return type": {
+    "prefix": "fnr",
+    "body": [
+      "fn ${1:name}(${2:params}) -> ${3:type} {",
+      "  return ${0};",
+      "}"
+    ],
+    "description": "Define a function with return type"
+  },
+  "Arrow Function": {
+    "prefix": "arrow",
+    "body": "(${1:params}) => ${0}",
+    "description": "Arrow function / lambda"
+  },
+  "Arrow Function Block": {
+    "prefix": "arrowb",
+    "body": [
+      "(${1:params}) => {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Arrow function with block body"
+  },
+  "Variable": {
+    "prefix": "var",
+    "body": "var ${1:name} = ${0};",
+    "description": "Declare a mutable variable"
+  },
+  "Let": {
+    "prefix": "let",
+    "body": "let ${1:name} = ${0};",
+    "description": "Declare a mutable variable (alias for var)"
+  },
+  "Constant": {
+    "prefix": "const",
+    "body": "const ${1:NAME} = ${0};",
+    "description": "Declare an immutable constant"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "  var ${2:field} = ${3:null};",
+      "",
+      "  init(${4:params}) {",
+      "    self.${2} = ${4};",
+      "  }",
+      "",
+      "  fn ${5:method}() {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "Define a class with constructor"
+  },
+  "Class extends": {
+    "prefix": "classex",
+    "body": [
+      "class ${1:ClassName} extends ${2:ParentClass} {",
+      "  init(${3:params}) {",
+      "    super(${4:args});",
+      "  }",
+      "",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Define a class that extends another"
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:Name} {",
+      "  fn ${2:method}(${3:params})${4: -> ${5:type}};",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Define an interface"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:Name} {",
+      "  ${2:Value1},",
+      "  ${3:Value2},",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Define an enum"
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If-Else": {
+    "prefix": "ife",
+    "body": [
+      "if ${1:condition} {",
+      "  ${2}",
+      "} else {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "If-else statement"
+  },
+  "If-Else If": {
+    "prefix": "ifei",
+    "body": [
+      "if ${1:condition} {",
+      "  ${2}",
+      "} else if ${3:condition} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "If-else if statement"
+  },
+  "For Range": {
+    "prefix": "forr",
+    "body": [
+      "for ${1:i} in range(${2:0}, ${3:10}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "For loop with range"
+  },
+  "For In": {
+    "prefix": "forin",
+    "body": [
+      "for ${1:item} in ${2:collection} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "For-in loop over collection"
+  },
+  "While": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Do-While": {
+    "prefix": "dowhile",
+    "body": [
+      "do {",
+      "  ${0}",
+      "} while ${1:condition};"
+    ],
+    "description": "Do-while loop"
+  },
+  "Match": {
+    "prefix": "match",
+    "body": [
+      "match ${1:value} {",
+      "  ${2:pattern} => ${3:result},",
+      "  _ => ${0},",
+      "}"
+    ],
+    "description": "Match expression"
+  },
+  "Match Block": {
+    "prefix": "matchb",
+    "body": [
+      "match ${1:value} {",
+      "  ${2:pattern} => {",
+      "    ${3}",
+      "  }",
+      "  _ => {",
+      "    ${0}",
+      "  }",
+      "}"
+    ],
+    "description": "Match with block arms"
+  },
+  "Try-Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "  ${1}",
+      "} catch ${2:e} {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+  "Try-Catch-Finally": {
+    "prefix": "tryf",
+    "body": [
+      "try {",
+      "  ${1}",
+      "} catch ${2:e} {",
+      "  ${3}",
+      "} finally {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Try-catch-finally block"
+  },
+  "Import": {
+    "prefix": "import",
+    "body": "import ${1:module};",
+    "description": "Import a module"
+  },
+  "Import Math": {
+    "prefix": "imath",
+    "body": "import math;",
+    "description": "Import math module"
+  },
+  "Import IO": {
+    "prefix": "iio",
+    "body": "import io;",
+    "description": "Import io module"
+  },
+  "Import OS": {
+    "prefix": "ios",
+    "body": "import os;",
+    "description": "Import os module"
+  },
+  "Print": {
+    "prefix": "pr",
+    "body": "print(${0});",
+    "description": "Print statement"
+  },
+  "Print String": {
+    "prefix": "prs",
+    "body": "print(\"${0}\");",
+    "description": "Print a string"
+  },
+  "Map": {
+    "prefix": "map",
+    "body": "${1:list}.map((${2:x}) => ${0})",
+    "description": "Map over a list"
+  },
+  "Filter": {
+    "prefix": "filter",
+    "body": "${1:list}.filter((${2:x}) => ${0})",
+    "description": "Filter a list"
+  },
+  "Reduce": {
+    "prefix": "reduce",
+    "body": "${1:list}.reduce((${2:acc}, ${3:x}) => ${0}, ${4:0})",
+    "description": "Reduce a list"
+  },
+  "Main Template": {
+    "prefix": "main",
+    "body": [
+      "// ${1:Program Name}",
+      "// ${2:Description}",
+      "",
+      "fn main() {",
+      "  ${0}",
+      "}",
+      "",
+      "main();"
+    ],
+    "description": "Main program template"
+  },
+  "Export Function": {
+    "prefix": "exportfn",
+    "body": [
+      "export fn ${1:name}(${2:params}) {",
+      "  ${0}",
+      "}"
+    ],
+    "description": "Export a function"
+  },
+  "Read File": {
+    "prefix": "readfile",
+    "body": [
+      "import io;",
+      "var ${1:content} = io.readFile(\"${2:filename}\");",
+      "${0}"
+    ],
+    "description": "Read a file"
+  },
+  "Write File": {
+    "prefix": "writefile",
+    "body": [
+      "import io;",
+      "io.writeFile(\"${1:filename}\", ${2:data});",
+      "${0}"
+    ],
+    "description": "Write to a file"
+  },
+  "forEach": {
+    "prefix": "foreach",
+    "body": "${1:list}.forEach((${2:item}) => {\n  ${0}\n});",
+    "description": "forEach loop on list"
+  },
+  "Assert": {
+    "prefix": "assert",
+    "body": "assert(${1:condition}, \"${2:message}\");",
+    "description": "Assert statement"
+  }
+}

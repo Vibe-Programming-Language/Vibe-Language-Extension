@@ -1,0 +1,179 @@
+{
+  "name": "vibe-lang-support",
+  "displayName": "Vibe Language Support",
+  "description": "Full syntax highlighting, IntelliSense, snippets, run/build/check commands, REPL, diagnostics, and file icons for the Vibe programming language.",
+  "version": "1.1.0",
+  "publisher": "CodePlanet",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vibe-Programming-Language/Vibe-Language-Extension"
+  },
+  "homepage": "https://github.com/Vibe-Programming-Language/Vibe-Language-Extension",
+  "bugs": {
+    "url": "https://github.com/Vibe-Programming-Language/Vibe-Language-Extension/issues"
+  },
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Formatters"
+  ],
+  "keywords": [
+    "vibe",
+    "programming language",
+    "transpiler",
+    "c++",
+    "interpreter"
+  ],
+  "icon": "images/vibe-icon.png",
+  "galleryBanner": {
+    "color": "#1a1a2e",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onLanguage:vibe"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "vibe",
+        "aliases": [
+          "Vibe",
+          "vibe"
+        ],
+        "extensions": [
+          ".vibe"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/vibe-file-icon.svg",
+          "dark": "./images/vibe-file-icon.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "vibe",
+        "scopeName": "source.vibe",
+        "path": "./syntaxes/vibe.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "vibe",
+        "path": "./snippets/vibe.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "vibe.runFile",
+        "title": "Vibe: Run File",
+        "icon": "$(play)"
+      },
+      {
+        "command": "vibe.buildFile",
+        "title": "Vibe: Build File (Transpile to C++)",
+        "icon": "$(package)"
+      },
+      {
+        "command": "vibe.checkFile",
+        "title": "Vibe: Check File for Errors",
+        "icon": "$(checklist)"
+      },
+      {
+        "command": "vibe.openRepl",
+        "title": "Vibe: Open REPL",
+        "icon": "$(terminal)"
+      },
+      {
+        "command": "vibe.runSelection",
+        "title": "Vibe: Run Selection in REPL"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "vibe.runFile",
+          "group": "navigation",
+          "when": "resourceExtname == .vibe"
+        },
+        {
+          "command": "vibe.buildFile",
+          "group": "navigation",
+          "when": "resourceExtname == .vibe"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "vibe.runFile",
+          "group": "vibe",
+          "when": "resourceExtname == .vibe"
+        },
+        {
+          "command": "vibe.buildFile",
+          "group": "vibe",
+          "when": "resourceExtname == .vibe"
+        },
+        {
+          "command": "vibe.runSelection",
+          "group": "vibe",
+          "when": "editorLangId == vibe && editorHasSelection"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "vibe.runFile",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r",
+        "when": "editorLangId == vibe"
+      },
+      {
+        "command": "vibe.buildFile",
+        "key": "ctrl+shift+b",
+        "mac": "cmd+shift+b",
+        "when": "editorLangId == vibe"
+      },
+      {
+        "command": "vibe.openRepl",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i",
+        "when": "editorLangId == vibe"
+      }
+    ],
+    "configuration": {
+      "title": "Vibe",
+      "properties": {
+        "vibe.executablePath": {
+          "type": "string",
+          "default": "vibe",
+          "description": "Path to the Vibe executable."
+        },
+        "vibe.enableDiagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable real-time error checking on save."
+        },
+        "vibe.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Vibe status bar item."
+        }
+      }
+    },
+    "iconThemes": [
+      {
+        "id": "vibe-file-icons",
+        "label": "Vibe File Icons",
+        "path": "./icons/vibe-file-icon-theme.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}
