@@ -1,311 +1,429 @@
 {
-  "Function": {
+  "Function Declaration": {
     "prefix": "fn",
     "body": [
       "fn ${1:name}(${2:params}) {",
-      "  ${0}",
+      "    ${3:// body}",
       "}"
     ],
-    "description": "Define a function"
+    "description": "Create a function"
   },
-  "Function with return type": {
-    "prefix": "fnr",
+  "Async Function": {
+    "prefix": "afn",
     "body": [
-      "fn ${1:name}(${2:params}) -> ${3:type} {",
-      "  return ${0};",
+      "async fn ${1:name}(${2:params}) {",
+      "    ${3:// body}",
       "}"
     ],
-    "description": "Define a function with return type"
-  },
-  "Arrow Function": {
-    "prefix": "arrow",
-    "body": "(${1:params}) => ${0}",
-    "description": "Arrow function / lambda"
-  },
-  "Arrow Function Block": {
-    "prefix": "arrowb",
-    "body": [
-      "(${1:params}) => {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "Arrow function with block body"
-  },
-  "Variable": {
-    "prefix": "var",
-    "body": "var ${1:name} = ${0};",
-    "description": "Declare a mutable variable"
-  },
-  "Let": {
-    "prefix": "let",
-    "body": "let ${1:name} = ${0};",
-    "description": "Declare a mutable variable (alias for var)"
-  },
-  "Constant": {
-    "prefix": "const",
-    "body": "const ${1:NAME} = ${0};",
-    "description": "Declare an immutable constant"
+    "description": "Create an async function"
   },
   "Class": {
     "prefix": "class",
     "body": [
-      "class ${1:ClassName} {",
-      "  var ${2:field} = ${3:null};",
+      "class ${1:Name} {",
+      "    let ${2:property}",
       "",
-      "  init(${4:params}) {",
-      "    self.${2} = ${4};",
-      "  }",
+      "    fn init(${3:params}) {",
+      "        ${4:// constructor}",
+      "    }",
       "",
-      "  fn ${5:method}() {",
-      "    ${0}",
-      "  }",
+      "    fn ${5:method}() {",
+      "        ${6:// method body}",
+      "    }",
       "}"
     ],
-    "description": "Define a class with constructor"
-  },
-  "Class extends": {
-    "prefix": "classex",
-    "body": [
-      "class ${1:ClassName} extends ${2:ParentClass} {",
-      "  init(${3:params}) {",
-      "    super(${4:args});",
-      "  }",
-      "",
-      "  ${0}",
-      "}"
-    ],
-    "description": "Define a class that extends another"
+    "description": "Create a class"
   },
   "Interface": {
     "prefix": "interface",
     "body": [
       "interface ${1:Name} {",
-      "  fn ${2:method}(${3:params})${4: -> ${5:type}};",
-      "  ${0}",
+      "    fn ${2:method}(${3:params}) -> ${4:ReturnType}",
       "}"
     ],
-    "description": "Define an interface"
+    "description": "Create an interface"
   },
   "Enum": {
     "prefix": "enum",
     "body": [
       "enum ${1:Name} {",
-      "  ${2:Value1},",
-      "  ${3:Value2},",
-      "  ${0}",
+      "    ${2:Variant1},",
+      "    ${3:Variant2},",
+      "    ${4:Variant3}",
       "}"
     ],
-    "description": "Define an enum"
-  },
-  "If": {
-    "prefix": "if",
-    "body": [
-      "if ${1:condition} {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "If statement"
-  },
-  "If-Else": {
-    "prefix": "ife",
-    "body": [
-      "if ${1:condition} {",
-      "  ${2}",
-      "} else {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "If-else statement"
-  },
-  "If-Else If": {
-    "prefix": "ifei",
-    "body": [
-      "if ${1:condition} {",
-      "  ${2}",
-      "} else if ${3:condition} {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "If-else if statement"
-  },
-  "For Range": {
-    "prefix": "forr",
-    "body": [
-      "for ${1:i} in range(${2:0}, ${3:10}) {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "For loop with range"
-  },
-  "For In": {
-    "prefix": "forin",
-    "body": [
-      "for ${1:item} in ${2:collection} {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "For-in loop over collection"
-  },
-  "While": {
-    "prefix": "while",
-    "body": [
-      "while ${1:condition} {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "While loop"
-  },
-  "Do-While": {
-    "prefix": "dowhile",
-    "body": [
-      "do {",
-      "  ${0}",
-      "} while ${1:condition};"
-    ],
-    "description": "Do-while loop"
+    "description": "Create an enum"
   },
   "Match": {
     "prefix": "match",
     "body": [
       "match ${1:value} {",
-      "  ${2:pattern} => ${3:result},",
-      "  _ => ${0},",
+      "    case ${2:pattern1} => ${3:result1}",
+      "    case ${4:pattern2} => ${5:result2}",
+      "    case _ => ${6:default}",
       "}"
     ],
-    "description": "Match expression"
+    "description": "Pattern matching"
   },
-  "Match Block": {
-    "prefix": "matchb",
+  "For Loop": {
+    "prefix": "for",
     "body": [
-      "match ${1:value} {",
-      "  ${2:pattern} => {",
-      "    ${3}",
-      "  }",
-      "  _ => {",
-      "    ${0}",
-      "  }",
+      "for ${1:i} in ${2:0..10} {",
+      "    ${3:// body}",
       "}"
     ],
-    "description": "Match with block arms"
+    "description": "For loop"
   },
-  "Try-Catch": {
+  "Try Catch": {
     "prefix": "try",
     "body": [
       "try {",
-      "  ${1}",
-      "} catch ${2:e} {",
-      "  ${0}",
+      "    ${1:// try body}",
+      "} catch ${2:Error} as ${3:e} {",
+      "    show \"Error: {${3:e}.message}\"",
       "}"
     ],
     "description": "Try-catch block"
   },
-  "Try-Catch-Finally": {
-    "prefix": "tryf",
-    "body": [
-      "try {",
-      "  ${1}",
-      "} catch ${2:e} {",
-      "  ${3}",
-      "} finally {",
-      "  ${0}",
-      "}"
-    ],
-    "description": "Try-catch-finally block"
-  },
-  "Import": {
+  "Import Module": {
     "prefix": "import",
-    "body": "import ${1:module};",
+    "body": "import ${1|dsa,neural,ai,data,viz,image,web,db,crypto,fs,async,test,math,audio,cloud,game,web3,iot,robot,quantum|}",
     "description": "Import a module"
   },
-  "Import Math": {
-    "prefix": "imath",
-    "body": "import math;",
-    "description": "Import math module"
-  },
-  "Import IO": {
-    "prefix": "iio",
-    "body": "import io;",
-    "description": "Import io module"
-  },
-  "Import OS": {
-    "prefix": "ios",
-    "body": "import os;",
-    "description": "Import os module"
-  },
-  "Print": {
-    "prefix": "pr",
-    "body": "print(${0});",
-    "description": "Print statement"
-  },
-  "Print String": {
-    "prefix": "prs",
-    "body": "print(\"${0}\");",
-    "description": "Print a string"
-  },
-  "Map": {
-    "prefix": "map",
-    "body": "${1:list}.map((${2:x}) => ${0})",
-    "description": "Map over a list"
-  },
-  "Filter": {
-    "prefix": "filter",
-    "body": "${1:list}.filter((${2:x}) => ${0})",
-    "description": "Filter a list"
-  },
-  "Reduce": {
-    "prefix": "reduce",
-    "body": "${1:list}.reduce((${2:acc}, ${3:x}) => ${0}, ${4:0})",
-    "description": "Reduce a list"
-  },
-  "Main Template": {
-    "prefix": "main",
+  "Neural Network Sequential": {
+    "prefix": "nn-seq",
     "body": [
-      "// ${1:Program Name}",
-      "// ${2:Description}",
+      "import neural",
       "",
-      "fn main() {",
-      "  ${0}",
-      "}",
+      "let model = neural.Sequential([",
+      "    neural.Dense(${1:inputSize}, ${2:hiddenSize}, activation: \"relu\"),",
+      "    neural.Dropout(${3:0.3}),",
+      "    neural.Dense(${2:hiddenSize}, ${4:outputSize}, activation: \"${5:softmax}\")",
+      "])",
       "",
-      "main();"
+      "model.compile(",
+      "    optimizer: neural.Adam(lr: ${6:0.001}),",
+      "    loss: neural.${7:CrossEntropyLoss}(),",
+      "    metrics: [\"accuracy\"]",
+      ")"
     ],
-    "description": "Main program template"
+    "description": "Neural network with Sequential model"
   },
-  "Export Function": {
-    "prefix": "exportfn",
+  "CNN Model": {
+    "prefix": "nn-cnn",
     "body": [
-      "export fn ${1:name}(${2:params}) {",
-      "  ${0}",
+      "import neural",
+      "",
+      "let model = neural.Sequential([",
+      "    neural.Conv2D(${1:32}, kernelSize: ${2:3}, padding: \"same\", activation: \"relu\"),",
+      "    neural.MaxPool2D(${3:2}),",
+      "    neural.Conv2D(${4:64}, kernelSize: ${2:3}, padding: \"same\", activation: \"relu\"),",
+      "    neural.MaxPool2D(${3:2}),",
+      "    neural.Flatten(),",
+      "    neural.Dense(${5:128}, activation: \"relu\"),",
+      "    neural.Dropout(${6:0.5}),",
+      "    neural.Dense(${7:10}, activation: \"softmax\")",
+      "])"
+    ],
+    "description": "CNN model template"
+  },
+  "Transformer Model": {
+    "prefix": "nn-transformer",
+    "body": [
+      "import neural",
+      "",
+      "let model = neural.Transformer(",
+      "    dModel: ${1:512},",
+      "    nHeads: ${2:8},",
+      "    numLayers: ${3:6},",
+      "    ffDim: ${4:2048},",
+      "    vocabSize: ${5:30000},",
+      "    maxSeqLen: ${6:512},",
+      "    dropout: ${7:0.1}",
+      ")"
+    ],
+    "description": "Transformer model template"
+  },
+  "Data Analysis": {
+    "prefix": "data-analysis",
+    "body": [
+      "import data",
+      "import viz",
+      "",
+      "let df = data.readCSV(\"${1:data.csv}\")",
+      "show df.head(10)",
+      "show df.describe()",
+      "",
+      "let filtered = df.filter(row => ${2:row.value > 0})",
+      "let grouped = filtered.groupBy(\"${3:category}\").aggregate({",
+      "    ${4:value}: \"${5:mean}\"",
+      "})",
+      "",
+      "viz.barChart(grouped.select(\"${3:category}\"), grouped.select(\"${4:value}\"))",
+      "viz.show()"
+    ],
+    "description": "Data analysis template"
+  },
+  "ML Pipeline": {
+    "prefix": "ml-pipeline",
+    "body": [
+      "import ai",
+      "import data",
+      "",
+      "let df = data.readCSV(\"${1:data.csv}\")",
+      "let [trainX, testX, trainY, testY] = neural.trainTestSplit(",
+      "    df.drop(\"${2:target}\"), df.select(\"${2:target}\"), testSize: 0.2",
+      ")",
+      "",
+      "let scaler = ai.FeatureScaler()",
+      "trainX = scaler.fitTransform(trainX)",
+      "testX = scaler.transform(testX)",
+      "",
+      "let model = ai.${3|RandomForest,GradientBoosting,XGBoost,SVM,KNN|}()",
+      "model.fit(trainX, trainY)",
+      "",
+      "let predictions = model.predict(testX)",
+      "show ai.classificationReport(testY, predictions)",
+      "show \"Accuracy: {ai.accuracy(testY, predictions)}\""
+    ],
+    "description": "Machine learning pipeline template"
+  },
+  "Web Server": {
+    "prefix": "web-server",
+    "body": [
+      "import web",
+      "",
+      "let app = web.Server()",
+      "",
+      "app.get(\"/\", fn(req, res) {",
+      "    res.json({ message: \"${1:Hello from Vibe!}\" })",
+      "})",
+      "",
+      "app.listen(${2:3000}, fn() {",
+      "    show \"Server running on port ${2:3000}\"",
+      "})"
+    ],
+    "description": "Web server template"
+  },
+  "Test Suite": {
+    "prefix": "test-suite",
+    "body": [
+      "import test",
+      "",
+      "test.describe(\"${1:TestSuite}\", fn() {",
+      "    test.beforeEach(fn() {",
+      "        ${2:// setup}",
+      "    })",
+      "",
+      "    test.it(\"${3:should do something}\", fn() {",
+      "        test.expect(${4:result}).toBe(${5:expected})",
+      "    })",
+      "})",
+      "",
+      "test.run()"
+    ],
+    "description": "Test suite template"
+  },
+  "Graph Algorithm": {
+    "prefix": "dsa-graph",
+    "body": [
+      "import dsa",
+      "",
+      "let graph = dsa.Graph(directed: ${1|true,false|})",
+      "graph.addVertex(\"${2:A}\")",
+      "graph.addVertex(\"${3:B}\")",
+      "graph.addEdge(\"${2:A}\", \"${3:B}\", weight: ${4:5})",
+      "let result = dsa.${5|dijkstra,bfs,dfs,kruskal,prim,topologicalSort|}(graph)",
+      "show result"
+    ],
+    "description": "Graph algorithm template"
+  },
+  "Image Processing": {
+    "prefix": "image-process",
+    "body": [
+      "import image",
+      "",
+      "let img = image.load(\"${1:input.jpg}\")",
+      "let processed = img.resize(${2:800}, ${3:600}).gaussianBlur(${4:1.5})",
+      "processed.save(\"${5:output.jpg}\")"
+    ],
+    "description": "Image processing template"
+  },
+  "Database CRUD": {
+    "prefix": "db-crud",
+    "body": [
+      "import db",
+      "",
+      "let database = db.SQLite(\"${1:app.db}\")",
+      "database.createTable(\"${2:users}\", {",
+      "    id: \"INTEGER PRIMARY KEY AUTOINCREMENT\",",
+      "    name: \"TEXT NOT NULL\"",
+      "})",
+      "database.insert(\"${2:users}\", { name: \"${3:Alice}\" })",
+      "show database.find(\"${2:users}\", {})"
+    ],
+    "description": "Database CRUD operations"
+  },
+  "Quantum Circuit": {
+    "prefix": "quantum-circuit",
+    "body": [
+      "import quantum",
+      "",
+      "let circuit = quantum.Circuit(${1:2})",
+      "circuit.h(${2:0})",
+      "circuit.cx(${2:0}, ${3:1})",
+      "circuit.measureAll()",
+      "let sim = quantum.Simulator()",
+      "let result = sim.run(circuit, shots: ${4:1000})",
+      "show result.counts"
+    ],
+    "description": "Quantum circuit template"
+  },
+  "Game Loop": {
+    "prefix": "game-loop",
+    "body": [
+      "import game",
+      "",
+      "let window = game.Window(${1:800}, ${2:600}, \"${3:My Game}\")",
+      "let player = game.Sprite(\"${4:player.png}\")",
+      "",
+      "game.loop(fn(dt) {",
+      "    if game.Input.isKeyDown(\"ArrowRight\") { player.velocity.x = 200 }",
+      "    window.clear(\"black\")",
+      "    player.draw()",
+      "    window.display()",
+      "})"
+    ],
+    "description": "Game loop template"
+  },
+  "Decorator": {
+    "prefix": "decorator",
+    "body": [
+      "@${1|memoize,deprecated,benchmark,validate,route|}${2}",
+      "fn ${3:functionName}(${4:params}) {",
+      "    ${5:// body}",
       "}"
     ],
-    "description": "Export a function"
+    "description": "Function with decorator"
   },
-  "Read File": {
-    "prefix": "readfile",
+  "Async Parallel": {
+    "prefix": "async-parallel",
     "body": [
-      "import io;",
-      "var ${1:content} = io.readFile(\"${2:filename}\");",
-      "${0}"
+      "import async",
+      "",
+      "let results = await async.parallel([",
+      "    ${1:task1}(),",
+      "    ${2:task2}(),",
+      "    ${3:task3}()",
+      "])",
+      "show results"
     ],
-    "description": "Read a file"
+    "description": "Parallel async execution"
   },
-  "Write File": {
-    "prefix": "writefile",
+  "Visualization Dashboard": {
+    "prefix": "viz-dashboard",
     "body": [
-      "import io;",
-      "io.writeFile(\"${1:filename}\", ${2:data});",
-      "${0}"
+      "import viz",
+      "import data",
+      "",
+      "let df = data.readCSV(\"${1:data.csv}\")",
+      "let dashboard = viz.Dashboard(\"${2:Analytics Dashboard}\")",
+      "dashboard.addChart(viz.lineChart(df.select(\"date\"), df.select(\"value\")), position: [0, 0])",
+      "dashboard.serve(port: ${3:8080})"
     ],
-    "description": "Write to a file"
+    "description": "Visualization dashboard template"
   },
-  "forEach": {
-    "prefix": "foreach",
-    "body": "${1:list}.forEach((${2:item}) => {\n  ${0}\n});",
-    "description": "forEach loop on list"
+  "IoT Sensor": {
+    "prefix": "iot-sensor",
+    "body": [
+      "import iot",
+      "import async",
+      "",
+      "let sensor = iot.Sensor(\"${1|temperature,humidity,pressure|}\")",
+      "loop {",
+      "    let reading = sensor.read()",
+      "    show \"Reading: {reading}\"",
+      "    await async.sleep(${2:1000})",
+      "}"
+    ],
+    "description": "IoT sensor reading template"
   },
-  "Assert": {
-    "prefix": "assert",
-    "body": "assert(${1:condition}, \"${2:message}\");",
-    "description": "Assert statement"
+  "Pipe Chain": {
+    "prefix": "pipe",
+    "body": [
+      "let ${1:result} = ${2:data}",
+      "    |> ${3:transform1}",
+      "    |> ${4:transform2}",
+      "    |> ${5:transform3}"
+    ],
+    "description": "Pipe operator chain"
+  },
+  "Neural Training Loop (v1.2)": {
+    "prefix": "neural-train",
+    "body": [
+      "import neural",
+      "",
+      "let model = neural.Sequential([",
+      "    neural.Dense(${1:16}, ${2:32}, activation: \"relu\"),",
+      "    neural.Dropout(${3:0.2}),",
+      "    neural.Dense(${2:32}, ${4:2}, activation: \"softmax\")",
+      "])",
+      "",
+      "let optimizer = neural.Adam(lr: ${5:0.001})",
+      "let loss = neural.CrossEntropyLoss()",
+      "neural.train(model, ${6:trainX}, ${7:trainY}, epochs: ${8:25})"
+    ],
+    "description": "Neural training pipeline for Vibe v1.2"
+  },
+  "DSA Search + Sort (v1.2)": {
+    "prefix": "dsa-core",
+    "body": [
+      "import dsa",
+      "",
+      "let values = [${1:9}, ${2:2}, ${3:7}, ${4:1}]",
+      "let sorted = dsa.quickSort(values)",
+      "let idx = dsa.binarySearch(sorted, ${5:7})",
+      "show sorted",
+      "show idx"
+    ],
+    "description": "Core DSA flow with quickSort and binarySearch"
+  },
+  "AI Metrics (v1.2)": {
+    "prefix": "ai-metrics",
+    "body": [
+      "import ai",
+      "",
+      "let [trainX, testX, trainY, testY] = ai.trainTestSplit(${1:features}, ${2:labels}, testSize: ${3:0.2})",
+      "let pred = ${4:model}.predict(testX)",
+      "show ai.accuracy(testY, pred)",
+      "show ai.f1Score(testY, pred)",
+      "show ai.confusionMatrix(testY, pred)"
+    ],
+    "description": "AI utility + metrics workflow"
+  },
+  "Data CSV Workflow (v1.2)": {
+    "prefix": "data-csv",
+    "body": [
+      "import data",
+      "",
+      "let df = data.readCSV(\"${1:input.csv}\")",
+      "show data.head(df, ${2:5})",
+      "show data.describe(df)",
+      "data.writeCSV(df, \"${3:output.csv}\")"
+    ],
+    "description": "Read/inspect/write CSV with data module"
+  },
+  "Image Processing Pipeline (v1.2)": {
+    "prefix": "image-pipeline",
+    "body": [
+      "import image",
+      "",
+      "let img = image.loadImage(\"${1:input.png}\")",
+      "img = image.resizeImage(img, ${2:640}, ${3:480})",
+      "img = image.applyBlur(img, ${4:2})",
+      "img = image.detectEdges(img)",
+      "image.saveImage(img, \"${5:output.png}\")"
+    ],
+    "description": "Image module workflow for Vibe v1.2"
   }
 }

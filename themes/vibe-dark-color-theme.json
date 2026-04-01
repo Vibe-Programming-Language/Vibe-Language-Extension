@@ -1,0 +1,68 @@
+{
+  "name": "Vibe Dark",
+  "type": "dark",
+  "tokenColors": [
+    {
+      "scope": ["keyword.control.vibe", "keyword.declaration.vibe"],
+      "settings": { "foreground": "#C678DD", "fontStyle": "bold" }
+    },
+    {
+      "scope": ["keyword.modifier.vibe"],
+      "settings": { "foreground": "#C678DD" }
+    },
+    {
+      "scope": ["string.quoted.double.vibe", "string.quoted.single.vibe", "string.quoted.triple.vibe"],
+      "settings": { "foreground": "#98C379" }
+    },
+    {
+      "scope": ["constant.numeric"],
+      "settings": { "foreground": "#D19A66" }
+    },
+    {
+      "scope": ["comment"],
+      "settings": { "foreground": "#5C6370", "fontStyle": "italic" }
+    },
+    {
+      "scope": ["comment.line.documentation.vibe"],
+      "settings": { "foreground": "#7C8596", "fontStyle": "italic" }
+    },
+    {
+      "scope": ["entity.name.function.vibe"],
+      "settings": { "foreground": "#61AFEF" }
+    },
+    {
+      "scope": ["support.function.builtin.vibe"],
+      "settings": { "foreground": "#56B6C2" }
+    },
+    {
+      "scope": ["entity.name.type.class.vibe", "support.type.primitive.vibe"],
+      "settings": { "foreground": "#E5C07B", "fontStyle": "bold" }
+    },
+    {
+      "scope": ["support.module.vibe"],
+      "settings": { "foreground": "#E06C75", "fontStyle": "bold" }
+    },
+    {
+      "scope": ["entity.name.decorator.vibe"],
+      "settings": { "foreground": "#D19A66", "fontStyle": "italic" }
+    },
+    {
+      "scope": ["keyword.operator"],
+      "settings": { "foreground": "#56B6C2" }
+    }
+  ],
+  "colors": {
+    "editor.background": "#1E1E2E",
+    "editor.foreground": "#CDD6F4",
+    "editorCursor.foreground": "#F5E0DC",
+    "editor.lineHighlightBackground": "#2A2B3D",
+    "editor.selectionBackground": "#45475A",
+    "sideBar.background": "#181825",
+    "activityBar.background": "#11111B",
+    "statusBar.background": "#181825",
+    "titleBar.activeBackground": "#181825",
+    "tab.activeBackground": "#1E1E2E",
+    "tab.inactiveBackground": "#181825",
+    "terminal.background": "#1E1E2E"
+  }
+}

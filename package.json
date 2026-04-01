@@ -1,53 +1,55 @@
 {
-  "name": "vibe-lang-support",
-  "displayName": "Vibe Language Support",
-  "description": "Full syntax highlighting, IntelliSense, snippets, run/build/check commands, REPL, diagnostics, and file icons for the Vibe programming language.",
-  "version": "1.1.1",
-  "publisher": "CodePlanet",
-  "license": "MIT",
+  "name": "vibe-language",
+  "displayName": "Vibe Language",
+  "description": "Full language support for Vibe — AI-first, all-in-one programming language with neural networks, data science, DSA, and 20+ built-in modules",
+  "version": "2.1.0",
+  "publisher": "vibe-lang",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Vibe-Programming-Language/Vibe-Language-Extension"
+    "url": "https://github.com/Vibe-Programming-Language/Vibe-Language-Extension.git"
   },
-  "homepage": "https://github.com/Vibe-Programming-Language/Vibe-Language-Extension",
-  "bugs": {
-    "url": "https://github.com/Vibe-Programming-Language/Vibe-Language-Extension/issues"
-  },
+  "license": "MIT",
+  "icon": "images/vibe-icon.png",
   "engines": {
-    "vscode": "^1.86.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Programming Languages",
     "Snippets",
-    "Formatters"
+    "Formatters",
+    "Machine Learning",
+    "Data Science"
   ],
   "keywords": [
     "vibe",
     "programming language",
-    "transpiler",
-    "c++",
-    "interpreter"
+    "AI",
+    "machine learning",
+    "deep learning",
+    "neural network",
+    "data science",
+    "DSA",
+    "algorithms",
+    "quantum computing",
+    "game development",
+    "IoT",
+    "robotics",
+    "web development"
   ],
-  "icon": "images/vibe-icon.png",
-  "galleryBanner": {
-    "color": "#1a1a2e",
-    "theme": "dark"
-  },
   "activationEvents": [
     "onLanguage:vibe"
   ],
-  "main": "./extension.js",
+  "scripts": {
+    "package": "npx @vscode/vsce package",
+    "package:out": "npx @vscode/vsce package -o vibe-language-2.1.0.vsix"
+  },
+  "main": "./out/extension.js",
   "contributes": {
     "languages": [
       {
         "id": "vibe",
-        "aliases": [
-          "Vibe",
-          "vibe"
-        ],
-        "extensions": [
-          ".vibe"
-        ],
+        "aliases": ["Vibe", "vibe"],
+        "extensions": [".vibe"],
         "configuration": "./language-configuration.json",
         "icon": {
           "light": "./images/vibe-file-icon.svg",
@@ -68,112 +70,107 @@
         "path": "./snippets/vibe.json"
       }
     ],
-    "commands": [
+    "themes": [
       {
-        "command": "vibe.runFile",
-        "title": "Vibe: Run File",
-        "icon": "$(play)"
+        "label": "Vibe Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/vibe-dark-color-theme.json"
       },
       {
-        "command": "vibe.buildFile",
-        "title": "Vibe: Build File (Transpile to C++)",
-        "icon": "$(package)"
-      },
-      {
-        "command": "vibe.checkFile",
-        "title": "Vibe: Check File for Errors",
-        "icon": "$(checklist)"
-      },
-      {
-        "command": "vibe.openRepl",
-        "title": "Vibe: Open REPL",
-        "icon": "$(terminal)"
-      },
-      {
-        "command": "vibe.runSelection",
-        "title": "Vibe: Run Selection in REPL"
+        "label": "Vibe Light",
+        "uiTheme": "vs",
+        "path": "./themes/vibe-light-color-theme.json"
       }
     ],
-    "menus": {
-      "editor/title": [
-        {
-          "command": "vibe.runFile",
-          "group": "navigation",
-          "when": "resourceExtname == .vibe"
-        },
-        {
-          "command": "vibe.buildFile",
-          "group": "navigation",
-          "when": "resourceExtname == .vibe"
-        }
-      ],
-      "editor/context": [
-        {
-          "command": "vibe.runFile",
-          "group": "vibe",
-          "when": "resourceExtname == .vibe"
-        },
-        {
-          "command": "vibe.buildFile",
-          "group": "vibe",
-          "when": "resourceExtname == .vibe"
-        },
-        {
-          "command": "vibe.runSelection",
-          "group": "vibe",
-          "when": "editorLangId == vibe && editorHasSelection"
-        }
-      ]
-    },
+    "iconThemes": [
+      {
+        "id": "vibe-icons",
+        "label": "Vibe Icons",
+        "path": "./icons/vibe-icon-theme.json"
+      }
+    ],
+    "commands": [
+      { "command": "vibe.run", "title": "Vibe: Run Current File", "icon": "$(play)" },
+      { "command": "vibe.runTests", "title": "Vibe: Run Tests" },
+      { "command": "vibe.formatDocument", "title": "Vibe: Format Document" },
+      { "command": "vibe.newProject", "title": "Vibe: Create New Project" },
+      { "command": "vibe.openDocs", "title": "Vibe: Open Documentation" },
+      { "command": "vibe.insertSnippet", "title": "Vibe: Insert Code Snippet" },
+      { "command": "vibe.runFile", "title": "Vibe: Run File", "icon": "$(play)" },
+      { "command": "vibe.buildFile", "title": "Vibe: Build File (Transpile to C++)", "icon": "$(package)" },
+      { "command": "vibe.checkFile", "title": "Vibe: Check File for Errors", "icon": "$(checklist)" },
+      { "command": "vibe.openRepl", "title": "Vibe: Open REPL", "icon": "$(terminal)" },
+      { "command": "vibe.runSelection", "title": "Vibe: Run Selection in REPL" }
+    ],
     "keybindings": [
       {
-        "command": "vibe.runFile",
+        "command": "vibe.run",
         "key": "ctrl+shift+r",
         "mac": "cmd+shift+r",
         "when": "editorLangId == vibe"
       },
       {
-        "command": "vibe.buildFile",
-        "key": "ctrl+shift+b",
-        "mac": "cmd+shift+b",
-        "when": "editorLangId == vibe"
-      },
-      {
-        "command": "vibe.openRepl",
-        "key": "ctrl+shift+i",
-        "mac": "cmd+shift+i",
+        "command": "vibe.formatDocument",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f",
         "when": "editorLangId == vibe"
       }
     ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "vibe.run",
+          "when": "editorLangId == vibe",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "vibe.run",
+          "when": "editorLangId == vibe",
+          "group": "1_vibe"
+        },
+        {
+          "command": "vibe.openDocs",
+          "when": "editorLangId == vibe",
+          "group": "1_vibe"
+        }
+      ]
+    },
     "configuration": {
       "title": "Vibe",
       "properties": {
+        "vibe.formatOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically format Vibe files on save"
+        },
+        "vibe.tabSize": {
+          "type": "number",
+          "default": 4,
+          "description": "Number of spaces per indentation level"
+        },
+        "vibe.showInlineHints": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show inline type hints"
+        },
+        "vibe.lintOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run linter on save"
+        },
+        "vibe.autoImport": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically add import statements"
+        },
         "vibe.executablePath": {
           "type": "string",
           "default": "vibe",
-          "description": "Path to the Vibe executable."
-        },
-        "vibe.enableDiagnostics": {
-          "type": "boolean",
-          "default": true,
-          "description": "Enable real-time error checking on save."
-        },
-        "vibe.showStatusBar": {
-          "type": "boolean",
-          "default": true,
-          "description": "Show Vibe status bar item."
+          "description": "Path to the Vibe executable"
         }
       }
-    },
-    "iconThemes": [
-      {
-        "id": "vibe-file-icons",
-        "label": "Vibe File Icons",
-        "path": "./icons/vibe-file-icon-theme.json"
-      }
-    ]
-  },
-  "devDependencies": {
-    "@vscode/vsce": "^2.22.0"
+    }
   }
 }

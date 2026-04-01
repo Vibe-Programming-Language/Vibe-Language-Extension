@@ -1,0 +1,10 @@
+{
+  "iconDefinitions": {
+    "_file_vibe": {
+      "iconPath": "../images/vibe-icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "vibe": "_file_vibe"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Vibe Light",
+  "type": "light",
+  "tokenColors": [
+    {
+      "scope": ["keyword.control.vibe", "keyword.declaration.vibe"],
+      "settings": { "foreground": "#7A3E9D", "fontStyle": "bold" }
+    },
+    {
+      "scope": ["string.quoted.double.vibe", "string.quoted.single.vibe", "string.quoted.triple.vibe"],
+      "settings": { "foreground": "#0B7D4E" }
+    },
+    {
+      "scope": ["constant.numeric"],
+      "settings": { "foreground": "#A15A00" }
+    },
+    {
+      "scope": ["comment"],
+      "settings": { "foreground": "#6E7781", "fontStyle": "italic" }
+    },
+    {
+      "scope": ["entity.name.function.vibe"],
+      "settings": { "foreground": "#0A66C2" }
+    },
+    {
+      "scope": ["support.type.primitive.vibe", "entity.name.type.class.vibe"],
+      "settings": { "foreground": "#915F00", "fontStyle": "bold" }
+    },
+    {
+      "scope": ["support.module.vibe"],
+      "settings": { "foreground": "#B42318", "fontStyle": "bold" }
+    }
+  ],
+  "colors": {
+    "editor.background": "#FFFFFF",
+    "editor.foreground": "#1B1F24",
+    "editorCursor.foreground": "#0A0A0A",
+    "editor.lineHighlightBackground": "#F3F4F6",
+    "editor.selectionBackground": "#DCEBFF",
+    "sideBar.background": "#FAFAFA",
+    "activityBar.background": "#F2F2F2",
+    "statusBar.background": "#F2F2F2",
+    "titleBar.activeBackground": "#F2F2F2",
+    "tab.activeBackground": "#FFFFFF",
+    "tab.inactiveBackground": "#F5F5F5",
+    "terminal.background": "#FFFFFF"
+  }
+}

@@ -8,7 +8,7 @@
   <a href="https://marketplace.visualstudio.com/items?itemName=CodePlanet.vibe-lang-support"><img src="https://img.shields.io/visual-studio-marketplace/v/CodePlanet.vibe-lang-support?color=%234cc9f0&label=Marketplace" alt="Version"></a>
   <a href="https://marketplace.visualstudio.com/items?itemName=CodePlanet.vibe-lang-support"><img src="https://img.shields.io/visual-studio-marketplace/i/CodePlanet.vibe-lang-support?color=%2300b4d8" alt="Installs"></a>
   <a href="https://github.com/Vibe-Programming-Language/Vibe-Language-Extension/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-  <a href="https://github.com/Vibe-Programming-Language/Vibe"><img src="https://img.shields.io/badge/Vibe-v1.0.0-black?style=flat-square" alt="Vibe"></a>
+  <a href="https://github.com/Vibe-Programming-Language/Vibe"><img src="https://img.shields.io/badge/Vibe-v1.2.0-black?style=flat-square" alt="Vibe"></a>
   <a href="https://vibe-lang-docs.vercel.app"><img src="https://img.shields.io/badge/docs-live-black?style=flat-square" alt="Docs"></a>
 </p>
 
@@ -35,8 +35,9 @@ for i in range(0, 10) {
 - **Keyword completions** with usage examples
 - **Module completions** — type `math.` and see all available methods
 - **Method completions** for strings, lists, and maps
+- **Runtime-aware module APIs** for `neural`, `dsa`, `ai`, `data`, and `image`
 
-### 40+ Code Snippets
+### 45+ Code Snippets
 Rapidly scaffold common patterns:
 
 | Prefix | Description |
@@ -49,7 +50,11 @@ Rapidly scaffold common patterns:
 | `try` | Try-catch-finally |
 | `import` | Import statement |
 | `arrow` | Arrow function |
-| ... | And 30+ more! |
+| `neural-train` | V1.2 neural training workflow |
+| `dsa-core` | V1.2 search/sort workflow |
+| `data-csv` | CSV read/inspect/write workflow |
+| `image-pipeline` | V1.2 image processing workflow |
+| ... | And many more! |
 
 Type the prefix and press `Tab` to expand.
 
