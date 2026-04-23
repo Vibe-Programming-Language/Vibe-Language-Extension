@@ -104,11 +104,11 @@
       "patterns": [
         {
           "name": "keyword.control.vibe",
-          "match": "\\b(if|else|for|while|loop|match|case|return|break|continue|yield|defer|guard|try|catch|finally|throw|in|step|async|await)\\b"
+          "match": "\\b(if|else|for|while|loop|match|case|return|break|continue|yield|defer|guard|try|catch|finally|throw|in|step|async|await|spawn|python)\\b"
         },
         {
           "name": "keyword.declaration.vibe",
-          "match": "\\b(let|const|fn|class|interface|enum|type|import|export|from|extends|implements|operator|macro|module)\\b"
+          "match": "\\b(let|const|fn|class|interface|enum|type|import|pyimport|export|from|extends|implements|operator|macro|module|actor)\\b"
         },
         {
           "name": "keyword.modifier.vibe",

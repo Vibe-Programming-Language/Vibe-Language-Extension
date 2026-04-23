@@ -8,6 +8,40 @@
     ],
     "description": "Create a function"
   },
+  "Actor Declaration": {
+    "prefix": "actor",
+    "body": [
+      "actor ${1:Name} {",
+      "    fn receive(msg: Message) {",
+      "        ${2:// Handle message}",
+      "    }",
+      "}"
+    ],
+    "description": "Create an actor"
+  },
+  "Python Block": {
+    "prefix": "python",
+    "body": [
+      "python \"\"",
+      "import ${1:module}",
+      "${2:# python code}",
+      "\"\";"
+    ],
+    "description": "Embedded python block"
+  },
+  "ML Module": {
+    "prefix": "module",
+    "body": [
+      "module ${1:Name} {",
+      "    let ${2:layer} = new Linear(${3:in}, ${4:out});",
+      "",
+      "    fn forward(x: Tensor) -> Tensor {",
+      "        return x |> ${2:layer}.forward() |> ml.relu();",
+      "    }",
+      "}"
+    ],
+    "description": "Neural architecture module"
+  },
   "Async Function": {
     "prefix": "afn",
     "body": [

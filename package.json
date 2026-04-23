@@ -99,7 +99,8 @@
       { "command": "vibe.runFile", "title": "Vibe: Run File", "icon": "$(play)" },
       { "command": "vibe.buildFile", "title": "Vibe: Build File (Transpile to C++)", "icon": "$(package)" },
       { "command": "vibe.checkFile", "title": "Vibe: Check File for Errors", "icon": "$(checklist)" },
-      { "command": "vibe.openRepl", "title": "Vibe: Open REPL", "icon": "$(terminal)" },
+      { "command": "vibe.openRepl", "title": "Vibe: Open AI REPL", "icon": "$(terminal)" },
+      { "command": "vibe.debugAI", "title": "Vibe: Debug AI/Tensor Flow", "icon": "$(debug)" },
       { "command": "vibe.runSelection", "title": "Vibe: Run Selection in REPL" }
     ],
     "keybindings": [

@@ -167,8 +167,14 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   const openRepl = vscode.commands.registerCommand('vibe.openRepl', () => {
-    const terminal = vscode.window.createTerminal('Vibe REPL');
-    terminal.sendText(`${vibeExe()} repl`);
+    const terminal = vscode.window.createTerminal('Vibe REPL (AI Mode)');
+    terminal.sendText(`${vibeExe()} repl --multiline`); // Assume --multiline flag enables robust shell 
+    terminal.show();
+  });
+
+  const debugAI = vscode.commands.registerCommand('vibe.debugAI', () => {
+    const terminal = vscode.window.createTerminal('Vibe AI Debug');
+    terminal.sendText(`${vibeExe()} run --trace-tensors ${activeVibeEditor()?.document.uri.fsPath}`);
     terminal.show();
   });
 
@@ -407,6 +413,7 @@ export function activate(context: vscode.ExtensionContext) {
     insertSnippet,
     runSelection,
     openRepl,
+    debugAI,
     formatCmd,
     fmtProvider,
     hover,
